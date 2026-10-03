@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# ==============================================================================
+# QubeBox: Portable QubesOS-style Virtual Machine Manager for Linux
+# Self-contained launcher script. Runs from any directory or USB drive.
+# ==============================================================================
+
+set -e
+
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do
+  DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+APP_DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+
+# Environment variables
+export PYTHONPATH="$APP_DIR/src:${PYTHONPATH:-}"
+
+# Portable user-space QEMU runtime
+if [ -d "$APP_DIR/runtime" ]; then
+  export PATH="$APP_DIR/runtime/bin:$PATH"
+  export LD_LIBRARY_PATH="$APP_DIR/runtime/lib:${LD_LIBRARY_PATH:-}"
+  if [ -d "$APP_DIR/runtime/lib/qemu" ]; then
+    export QEMU_MODULE_DIR="$APP_DIR/runtime/lib/qemu"
+  fi
+fi
+
+# Force Dark Theme for seamless modern aesthetic
+export GTK_THEME="Adwaita:dark"
+
+exec python3 "$APP_DIR/src/qubebox/main.py" "$@"

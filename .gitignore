@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# QubeBox runtime & VM storage (binaries and disks)
+runtime/
+vms/
+*.qcow2
+*.img
+*.iso
+*.raw
+
+# Logs and runtime status
+*.log
+*.pid
+
+# Temporary & Editor files
+.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

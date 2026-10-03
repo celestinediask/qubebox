@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=QubeBox VM Manager
+GenericName=Virtual Machine Manager
+Comment=Portable QubesOS-style Virtual Machine Manager with Color Borders
+Exec=qubebox
+Icon=qubebox
+Terminal=false
+Categories=System;Emulator;Utility;
+Keywords=qubes;vm;qemu;virtualization;isolation;

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e24"/>
+      <stop offset="100%" stop-color="#121216"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect x="8" y="8" width="112" height="112" rx="20" fill="url(#bgGrad)" stroke="#2e2e38" stroke-width="2" filter="url(#shadow)"/>
+
+  <!-- Qubes Quad Boxes with Security Color Borders -->
+  <!-- Red Box: Untrusted / Disposable -->
+  <rect x="22" y="22" width="38" height="38" rx="8" fill="#25252e" stroke="#e74c3c" stroke-width="3.5"/>
+  <circle cx="41" cy="41" r="5" fill="#e74c3c"/>
+
+  <!-- Green Box: Trusted / Work -->
+  <rect x="68" y="22" width="38" height="38" rx="8" fill="#25252e" stroke="#2ecc71" stroke-width="3.5"/>
+  <circle cx="87" cy="41" r="5" fill="#2ecc71"/>
+
+  <!-- Yellow / Orange Box: Personal / Testing -->
+  <rect x="22" y="68" width="38" height="38" rx="8" fill="#25252e" stroke="#f1c40f" stroke-width="3.5"/>
+  <circle cx="41" cy="87" r="5" fill="#f1c40f"/>
+
+  <!-- Blue / Purple Box: Vault / Template -->
+  <rect x="68" y="68" width="38" height="38" rx="8" fill="#25252e" stroke="#3498db" stroke-width="3.5"/>
+  <circle cx="87" cy="87" r="5" fill="#3498db"/>
+</svg>
